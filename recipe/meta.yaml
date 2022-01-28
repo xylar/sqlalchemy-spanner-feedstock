@@ -34,7 +34,7 @@ test:
     - pip check
 
 about:
-  home: https://github.com/cloudspannerecosystem/python-spanner-sqlalchemy
+  home: https://github.com/googleapis/python-spanner-sqlalchemy
   license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
