@@ -1,7 +1,7 @@
 About sqlalchemy-spanner
 ========================
 
-Home: https://github.com/cloudspannerecosystem/python-spanner-sqlalchemy
+Home: https://github.com/googleapis/python-spanner-sqlalchemy
 
 Package license: Apache-2.0
 

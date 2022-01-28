@@ -1,5 +1,5 @@
 {% set name = "sqlalchemy-spanner" %}
-{% set version = "1.0.0" %}
+{% set version = "1.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 source:
   # url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   url: https://github.com/cloudspannerecosystem/python-spanner-sqlalchemy/archive/refs/tags/v{{ version }}.zip
-  sha256: 687ae268007bd203e89b1455bfeb768e18f38637819b3e1fd73710a0cddaddaa
+  sha256: b4a271ce457c59705e2ee98ff7dc0e456451030f8b4ec88056a7ce1c7871e9f5
 
 build:
   number: 0
@@ -21,8 +21,8 @@ requirements:
     - pip
   run:
     - python >=3.6
-    - sqlalchemy >=1.1.13,<=1.3.23
-    - google-cloud-spanner >=3.3.0
+    - sqlalchemy >=1.1.13
+    - google-cloud-spanner >=3.12.0
     - alembic
 
 test:
@@ -30,11 +30,12 @@ test:
     - google.cloud.sqlalchemy_spanner
   requires:
     - pip
-  commands:
-    - pip check
+    # Enable once https://github.com/googleapis/python-spanner-sqlalchemy/pull/198 is released
+#   commands:
+#     - pip check
 
 about:
-  home: https://github.com/cloudspannerecosystem/python-spanner-sqlalchemy
+  home: https://github.com/googleapis/python-spanner-sqlalchemy
   license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
