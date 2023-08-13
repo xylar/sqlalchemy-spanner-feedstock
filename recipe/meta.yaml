@@ -6,39 +6,39 @@ package:
   version: {{ version }}
 
 source:
-  # url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  # source from PyPI is missing version.py
   url: https://github.com/cloudspannerecosystem/python-spanner-sqlalchemy/archive/refs/tags/v{{ version }}.zip
   sha256: 858e8a552fb9d753347ccdb599e5b9ea8667b51b578b9eb4a6aee64bba1c5de4
 
 build:
-  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
+  number: 0
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.8
     - pip
   run:
-    - python >=3.6
+    - python >=3.8
     - sqlalchemy >=1.1.13
     - google-cloud-spanner >=3.12.0
     - alembic
 
 test:
   imports:
-    - google.cloud.sqlalchemy_spanner
-  requires:
-    - pip
+    - sqlalchemy_spanner
   commands:
     - pip check
+  requires:
+    - pip
 
 about:
-  home: https://github.com/googleapis/python-spanner-sqlalchemy
+  home: https://github.com/cloudspannerecosystem/python-spanner-sqlalchemy
+  summary: SQLAlchemy dialect integrated into Cloud Spanner database
   license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
-  summary: Spanner dialect for SQLAlchemy
 
 extra:
   recipe-maintainers:
