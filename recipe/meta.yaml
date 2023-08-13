@@ -30,9 +30,8 @@ test:
     - google.cloud.sqlalchemy_spanner
   requires:
     - pip
-    # Enable once https://github.com/googleapis/python-spanner-sqlalchemy/pull/198 is released
-#   commands:
-#     - pip check
+  commands:
+    - pip check
 
 about:
   home: https://github.com/googleapis/python-spanner-sqlalchemy
